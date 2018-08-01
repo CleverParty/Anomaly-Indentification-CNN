@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+        <head>
+                <meta charset="utf-8">
+                <title>Django File Upload Example</title>
+        </head>
+
+        <body>
+                <!-- List of uploaded documents -->
+                {% if documents %}
+                        <ul>
+                        {% for document in documents %}
+                                <li><a href="{{ document.docfile.url }}">{{ document.docfile.name }}
+                                <img src="{{ document.docfile.url }}" alt="{{ document.docfile.name }}">
+                                </a></li>
+                        {% endfor %}
+                        </ul>
+                {% else %}
+                        <p>No documents.</p>
+                {% endif %}
+
+                <!-- Upload form. Note enctype attribute! -->
+                <form action="{% url "list" %}" method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <p>{{ form.non_field_errors }}</p>
+                        <p>{{ form.docfile.label_tag }} </p>
+                        <p>
+                                {{ form.docfile.errors }}
+                                {{ form.docfile }}
+                        </p>
+                        <p><input type="submit" value="Upload" /></p>
+                </form>
+
+        </body>
+
+</html>
+~
+<!DOCTYPE html>
+<html lang= "en">
+    <head>
+        <link rel="stylesheet" type="text/css" href="vendors/css/normalize.css">
+        <link rel="stylesheet" type="text/css" href="vendors/css/Grid.css">
+        <link rel="stylesheet" type="text/css" href="resources/CSS/style.css">
+        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400" rel="stylesheet" type='text/css'>
+        <title>Retinopathy</title>
+
+
+    </head>
+    <body>
+        <header>
+            <div class="specialbox">
+                <h1> Diabetic Retinopathy </h1>
+
+            </div>
+            <div class="baba">
+                <h2> Scroll down to learn more</h2>
+            </div>
+
+            <div class="Buttons">
+                <a class="btn btn-full" href="#">Upload</a>
+                <a class="btn btn-ghost" href="#">Single Check </a>
+                <a class="btn button-hi" href="#">Triple Check</a>
+            </div>
+            <div class="medindia">
+                <picture>
+                    <source media="(min-width: 200px)" srcset="resources/CSS/img/medindia.jpg">
+                    <source media="(min-width: 250px)" srcset="resources/CSS/img/medindia.jpg">
+                    <img src="resources/CSS/img/medindia.jpg" alt="Logo" height="150" width="200">
+
+
+                </picture>
+            </div>
+        </header>
+        <section class= "noel">
+             <div class="row">
+                 <h3> Overview </h3>
+                 <p class="long-copy">
+                     Diabetic retinopathy is a diabetes complication that affects eyes. It's caused by damage to the blood vessels of the light-sensitive tissue at the back of the eye (retina).
+
+At first, diabetic retinopathy may cause no symptoms or only mild vision problems. Eventually, it can cause blindness.
+
+The condition can develop in anyone who has type 1 or type 2 diabetes. The longer you have diabetes and the less controlled your blood sugar is, the more likely you are to develop this eye complication.
+                 </p>
+
+
+                 <h4> Causes </h4>
+                 <p class="longer">
+                     Over time, too much sugar in your blood can lead to the blockage of the tiny blood vessels that nourish the retina, cutting off its blood supply. As a result, the eye attempts to grow new blood vessels. But these new blood vessels don't develop properly and can leak easily.
+
+There are two types of diabetic retinopathy:
+                 </p>
+            </div>
+            <div class="row">
+                <div class="col span-1-of-2">
+                    <h5> Early Diabetic Retinopathy. </h5>
+                    <p> In this more common form — called nonproliferative diabetic retinopathy (NPDR) — new blood vessels aren't growing (proliferating).
+
+When you have NPDR, the walls of the blood vessels in your retina weaken. Tiny bulges (microaneurysms) protrude from the vessel walls of the smaller vessels, sometimes leaking fluid and blood into the retina. Larger retinal vessels can begin to dilate and become irregular in diameter, as well. NPDR can progress from mild to severe, as more blood vessels become blocked.
+
+Nerve fibers in the retina may begin to swell. Sometimes the central part of the retina (macula) begins to swell (macular edema), a condition that requires treatment.</p>
+                </div>
+                 <div class="colspan-2-of-2">
+                    <h6> Advanced diabetic retinopathy. </h6>
+                    <p>  Diabetic retinopathy can progress to this more severe type, known as proliferative diabetic retinopathy. In this type, damaged blood vessels close off, causing the growth of new, abnormal blood vessels in the retina, and can leak into the clear, jelly-like substance that fills the center of your eye (vitreous).
+
+Eventually, scar tissue stimulated by the growth of new blood vessels may cause the retina to detach from the back of your eye. If the new blood vessels interfere with the normal flow of fluid out of the eye, pressure may build up in the eyeball. This can damage the nerve that carries images from your eye to your brain (optic nerve), resulting in glaucoma.</p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class= "liam">
+             <div class="row">
+                 <h3> Symptoms </h3>
+                 <p class="lo-copy">
+                    You might not have symptoms in the early stages of diabetic retinopathy. As the condition progresses, diabetic retinopathy symptoms may include:<br>
+
+<br>* Spots or dark strings floating in your vision (floaters)
+<br>* Blurred vision
+<br>* Fluctuating vision
+<br>* Impaired color vision
+<br>* Dark or empty areas in your vision
+<br>* Vision loss
+<br>* Diabetic retinopathy usually affects both eyes
+                 </p>
+
+
+                 <h4> Causes </h4>
+                 <p class="loonger">
+                     Anyone who has diabetes can develop diabetic retinopathy. Risk of developing the eye condition can increase as a result of:
+
+<br><br>* Duration of diabetes — the longer you have diabetes, the greater your risk of developing diabetic retinopathy
+<br>* Poor control of your blood sugar level
+<br>* High blood pressure
+<br>* High cholesterol
+<br>* Pregnancy
+<br>* Tobacco use
+<br>* Being African-American, Hispanic or Native American
+                 </p>
+            </div>
+
+
+
+        </section>
+    </body>
+</html>
